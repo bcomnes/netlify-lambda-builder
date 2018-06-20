@@ -1,0 +1,11 @@
+dist: trusty
+language: node_js
+node_js:
+  - 'node'
+sudo: false
+cache:
+  yarn: true
+install:
+  - yarn
+script:
+  - yarn test

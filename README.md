@@ -1,2 +1,2 @@
-# netlify-lambda-build
+# netlify-lambda-builder
 wip experiment 

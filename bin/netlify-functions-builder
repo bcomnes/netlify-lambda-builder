@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+const parseOpts = require("minimist");
+const glob = require("glob");
+const cliclopts = require("cliclopts");
+const path = require("path");
+const fs = require("fs");
+
+const clopts = cliclopts([
+  {
+    name: "dest",
+    abbr: "b",
+    help: "path to build directory",
+    default: "functions",
+    alias: "build"
+  },
+  {
+    name: "version",
+    abbr: "v",
+    boolean: true,
+    help: "show version information"
+  },
+  {
+    name: "help",
+    abbr: "h",
+    help: "show help",
+    boolean: true
+  }
+]);
+
+var argv = parseOpts(process.argv.slice(2), {
+  alias: clopts.alias(),
+  boolean: clopts.boolean(),
+  default: clopts.default()
+});
+
+if (argv.version) {
+  console.log(require("../package.json").version);
+  process.exit(0);
+}
+
+if (argv.help) {
+  console.log("Usage: netlify-functions-builder [source] [options]\n");
+  console.log("    Example: netlify-functions-builder source/ -b functions/\n");
+  console.log(
+    "    source                path to source directory (default: functions)"
+  );
+  clopts.print();
+  process.exit(0);
+}
+
+argv.source = argv.source || argv._[0] || "functions";
+
+const src = path.normalize(argv.source);
+const dest = path.normalize(argv.dest);
+
+const globStr = path.join(src, "*.json");
+const jsonFilePaths = glob.sync(globStr, { realpath: false });
