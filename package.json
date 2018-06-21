@@ -10,7 +10,7 @@
     "test:jest": "jest",
     "build": "run-s clean && run-p build:*",
     "build:site": "sitedown . -b build/ -l layout.html",
-    "build:functions": "./bin/netlify-functions-builder",
+    "build:functions": "./bin/netlify-functions-builder && ls -la functions",
     "clean": "rimraf build && mkdirp build && rimraf 'functions/*{.zip,/node_modules}'"
   },
   "repository": {
