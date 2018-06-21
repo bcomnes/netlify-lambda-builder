@@ -1,5 +1,5 @@
 # netlify-lambda-builder  [![stability][0]][1]
-[![npm version][2]][3] [![build status][4]][5] [![coverage][12]][13]
+[![npm version][2]][3] [![build status][4]][5]
 [![downloads][8]][9] [![js-standard-style][10]][11]
 
 An experimental CLI and convention for building Netlify functions.
@@ -65,5 +65,3 @@ Running `netlify-lambda-builder` will run `npm i` inside each function folder it
 [9]: https://npmjs.org/package/netlify-lambda-builder
 [10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [11]: https://github.com/feross/standard
-[12]: https://img.shields.io/coveralls/bcomnes/netlify-lambda-builder/master.svg?style=flat-square
-[13]: https://coveralls.io/github/bcomnes/netlify-lambda-builder
