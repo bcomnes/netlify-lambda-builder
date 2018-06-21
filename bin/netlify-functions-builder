@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 const parseOpts = require("minimist");
-const glob = require("glob");
 const cliclopts = require("cliclopts");
 const path = require("path");
-const fs = require("fs");
+const { buildFunctions } = require("../index");
 
 const clopts = cliclopts([
   {
@@ -54,5 +53,11 @@ argv.source = argv.source || argv._[0] || "functions";
 const src = path.normalize(argv.source);
 const dest = path.normalize(argv.dest);
 
-const globStr = path.join(src, "*.json");
-const jsonFilePaths = glob.sync(globStr, { realpath: false });
+buildFunctions(src, dest, (err, res) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log(res);
+  console.log("done!");
+});

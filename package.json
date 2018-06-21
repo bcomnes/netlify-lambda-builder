@@ -6,7 +6,12 @@
   "bin": "./bin/netlify-functions-builder",
   "scripts": {
     "test": "run-s test:*",
-    "test:lint": "eslint ."
+    "test:lint": "eslint .",
+    "test:jest": "jest",
+    "build": "run-s clean && run-p build:*",
+    "build:site": "sitedown . -b build/ -l layout.html",
+    "build:functions": "./bin/netlify-functions-builder",
+    "clean": "rimraf build && mkdirp build && rimraf 'functions/*{.zip,/node_modules}'"
   },
   "repository": {
     "type": "git",
@@ -25,17 +30,24 @@
   },
   "homepage": "https://github.com/bcomnes/netlify-lambda-builder#readme",
   "devDependencies": {
-    "npm-run-all": "^4.0.2",
+    "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-prettier": "^2.1.2",
+    "jest": "^23.1.0",
+    "npm-run-all": "^4.0.2",
     "prettier": "^1.10.1",
-    "babel-eslint": "^8.2.1"
+    "sitedown": "^3.3.0"
   },
   "dependencies": {
-    "minimist": "^1.2.0",
+    "archiver": "^2.1.1",
+    "cliclopts": "^1.1.1",
     "glob": "^7.1.2",
-    "cliclopts": "^1.1.1"
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "pump": "^3.0.0",
+    "run-parallel-limit": "^1.0.5",
+    "run-series": "^1.1.8"
   }
 }
