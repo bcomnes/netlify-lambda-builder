@@ -1,7 +1,7 @@
 {
   "name": "netlify-functions-builder",
   "description": "A Netlify functions builder experiment ",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Bret Comnes",
   "bin": "./bin/netlify-functions-builder",
   "bugs": {
