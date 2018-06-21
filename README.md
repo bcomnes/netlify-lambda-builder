@@ -24,7 +24,7 @@ src-folder/
     └── package.json
 
 
-$ netlify-lambda-builder src-folder functions
+$ netlify-lambda-builder src-folder --dest functions
 
 # ... some time
 
