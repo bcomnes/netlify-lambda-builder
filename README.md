@@ -7,7 +7,7 @@ An experimental CLI and convention for building Netlify functions.
 ## Installation
 
 ```console
-$ yarn add jsonfeed-to-rss --dev
+$ yarn add netlify-lambda-builder --dev
 ```
 
 ## Usage
