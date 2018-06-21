@@ -42,7 +42,7 @@ src-folder/
     └── node_modules
         └── ...
 
-$ tree function/
+$ tree functions/
 
 functions/
 ├── function-a.zip
