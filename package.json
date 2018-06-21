@@ -1,7 +1,7 @@
 {
   "name": "netlify-lambda-builder",
   "description": "A Netlify functions builder experiment ",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Bret Comnes",
   "bin": "./bin/netlify-lambda-builder",
   "bugs": {
