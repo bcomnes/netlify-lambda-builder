@@ -49,7 +49,7 @@ functions/
 └── function-b.zip
 ```
 
-Running `netlify-functions-builder` will run `npm i` inside each function folder it discovers in the source dir.  A function folder is a top level folder in the source folder that contains a package.json.
+Running `netlify-lambda-builder` will run `npm i` inside each function folder it discovers in the source dir.  A function folder is a top level folder in the source folder that contains a package.json.
 
 
 ## License
