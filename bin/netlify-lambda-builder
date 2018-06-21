@@ -39,8 +39,8 @@ if (argv.version) {
 }
 
 if (argv.help) {
-  console.log("Usage: netlify-functions-builder [source] [options]\n");
-  console.log("    Example: netlify-functions-builder source/ -b functions/\n");
+  console.log("Usage: netlify-lambda-builder [source] [options]\n");
+  console.log("    Example: netlify-lambda-builder source/ -b functions/\n");
   console.log(
     "    source                path to source directory (default: functions)"
   );

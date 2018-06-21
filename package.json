@@ -3,7 +3,7 @@
   "description": "A Netlify functions builder experiment ",
   "version": "1.0.0",
   "author": "Bret Comnes",
-  "bin": "./bin/netlify-functions-builder",
+  "bin": "./bin/netlify-lambda-builder",
   "bugs": {
     "url": "https://github.com/bcomnes/netlify-lambda-builder/issues"
   },
@@ -43,7 +43,7 @@
   },
   "scripts": {
     "build": "run-s clean && run-p build:*",
-    "build:functions": "./bin/netlify-functions-builder && ls -la functions",
+    "build:functions": "./bin/netlify-lambda-builder && ls -la functions",
     "build:site": "sitedown . -b build/ -l layout.html",
     "clean": "rimraf build && mkdirp build && rimraf 'functions/*{.zip,/node_modules}'",
     "test": "run-s test:*",
